@@ -1,0 +1,13 @@
+<div class="list-group" *ngIf="selectedStory == null">
+    <button class="list-group-item" active
+        *ngFor="let story of stories"
+        (click)="onSelectStory(story)">
+        <div>
+            <h4 width="20%">{{story.title}}</h4>
+            <h5>By {{story.author}}</h5>
+            <h5>Published {{ story.publishDate | date:'MM-dd-yyyy' }}</h5>
+        </div>
+    </button>
+</div>
+
+<app-display-story *ngIf="selectedStory" [story]="selectedStory"></app-display-story>

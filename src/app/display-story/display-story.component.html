@@ -1,0 +1,23 @@
+<div align="center">
+    <div class="card mb-6" style="max-width: 750px;">
+        <div class="row no-gutters">
+            <div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ story!.title }}</h4>
+                    <h5 class="card-title">{{story!.author}}</h5>
+                    <p class="card-text" align="left">{{ story!.content }}</p>
+                    <table>
+                        <tr>
+                            <td width="50px" align="center">
+                                <a [routerLink]="['/edit', story!.storyId]"><i class="fa fa-edit"></i></a>
+                            </td>
+                            <td width="50px" align="center">
+                                <a [routerLink]="['/delete', story!.storyId]"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

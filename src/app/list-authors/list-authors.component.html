@@ -1,0 +1,12 @@
+
+<div class="list-group" *ngIf="selectedAuthor == null">
+    <button class="list-group-item" aria-active
+        *ngFor="let author of authors"
+        (click)="onSelectAuthor(author)">
+        {{author.author}}
+    </button>
+</div>
+
+<div *ngIf="selectedAuthor">
+    <app-list-stories [author]="selectedAuthor"></app-list-stories> 
+</div>

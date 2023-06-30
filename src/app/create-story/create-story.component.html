@@ -1,0 +1,31 @@
+<div align="center" style="margin-left:50px;margin-right:50px" *ngIf="!wasSubmitted">
+    <p>{{ story.author }}</p>
+    <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input id="author" type="text" class="form-control" aria-describedby="helpAuthor" placeholder="Enter Author" required [(ngModel)]="story.author" name="author">
+        </div>
+        <div class="form-group">
+            <label for="story">Story Title</label>
+            <input id="story" type="text" class="form-control" aria-describedby="helpStory" placeholder="Enter Title" required [(ngModel)]="story.title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="chapter">Story Chapter</label>
+            <input id="chapter" type="number" class="form-control" aria-describedby="helpStory" placeholder="Enter chapter" required [(ngModel)]="story.chapter" name="chapter">
+        </div>
+        <div class="form-group">
+            <label for="description">Content</label>
+            <textarea id="description" rows="15" class="form-control" aria-describedby="helpDescription" placeholder="Enter the story content" required [(ngModel)]="story.content" name="content"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="publishDate">Publish Date</label>
+            <input id="publishDate" type="date" class="form-control" aria-describedby="helpDate" placeholder="Enter the publish date" required [(ngModel)]="story.publishDate" name="publishDate">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+  </div>
+  <div  *ngIf="wasSubmitted">
+    Story was added successfully.
+  </div>
+  
